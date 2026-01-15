@@ -1,3 +1,4 @@
+import Expenses from './components/Expenses';
 import Expenseitem from './components/Expensitem'
 
 function App() {
@@ -12,14 +13,13 @@ function App() {
     title : "new book 2",
     price : 99.99
   }
-] 
+];
 
   return (
     <div className="App">
-      <Expenseitem data={expenses[0]}/>
-      <Expenseitem data={expenses[1]}/>
+      <Expenses items={expenses} />
     </div>
-  )
+  );
 }
 
 

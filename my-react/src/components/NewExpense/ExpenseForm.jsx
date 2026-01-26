@@ -36,7 +36,8 @@ const ExpenseForm = (props) => {
             title: userInput.enteredTitle,
             price: userInput.enteredPrice,
             date: new Date(userInput.enteredDate)
-        } 
+        }
+        props.onSaveExpenseData(expenseData)
         setuserInput({
             enteredTitle: '',
             enteredPrice: '',

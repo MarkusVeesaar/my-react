@@ -3,16 +3,24 @@ import Expenseitem from './components/Expenses/Expensitem'
 import NewExpense from './components/NewExpense/NewExpense'
 
 function App() {
-  const expenses =[ 
+  const DYMMY_expenses =[ 
   {
+    id: 1,
     date : new Date(2024, 10, 12),
     title : "new book",
-    price : 30.99
+    amount : 30.99
   },
   {
+    id: 2,
     date : new Date(2024, 10, 12),
     title : "new book 2",
-    price : 99.99
+    amount : 99.99
+  },
+  {
+    id: 3,
+    date : new Date(2024, 11, 12),
+    title : "new book 3",
+    amount : 199.99
   }
   ];
 
@@ -24,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses items={expenses} />
+      <Expenses expenses={DYMMY_expenses} />
     </div>
   );
 }

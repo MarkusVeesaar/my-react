@@ -4,7 +4,7 @@ import "./Expensitem.css";
 import { useState } from "react";
 
 const Expenseitem = (props) => {
-  const [title, setTitle] = useState(props.data.title);
+  const [title, setTitle] = useState(props.expensedata.title);
 
   const ClickHandler = () => {
     console.log("Clicked");
@@ -14,10 +14,10 @@ const Expenseitem = (props) => {
 
   return (
     <Card className="expense-item">
-      <ExpenseDate date={props.data.date} />
+      <ExpenseDate date={props.expensedata.date} />
       <div className="expense-item__description">
-        <h2>{props.data.title}</h2>
-        <div className="expense-item__price">{props.data.price}</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">{props.expensedata.amount}</div>
       </div>
       <button onClick={ClickHandler}>Click Me</button>
     </Card>

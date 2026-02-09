@@ -8,7 +8,7 @@ function App() {
   const DYMMY_expenses =[ 
   {
     id: 1,
-    date : new Date(2024, 10, 12),
+    date : new Date(2023, 10, 12),
     title : "new book",
     amount : 30.99
   },

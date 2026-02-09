@@ -1,6 +1,8 @@
 import Expenses from './components/Expenses/Expenses';
 import Expenseitem from './components/Expenses/Expensitem'
 import NewExpense from './components/NewExpense/NewExpense'
+import { useState } from "react";
+
 
 function App() {
   const DYMMY_expenses =[ 
@@ -24,15 +26,18 @@ function App() {
   }
   ];
 
-  const addExpenseHandler = (expense) => {
-    console.log('In app.jsx')
-    console.log(expense)
-  }     
 
+  const [expenses, setExpenses] = useState(DYMMY_expenses)
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+    return [expense.enteredExpenseData, ...prevExpenses]
+    })
+  }
   return (
     <div className="App">
-      <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses expenses={DYMMY_expenses} />
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
+      <Expenses expenses={expenses} />
     </div>
   );
 }

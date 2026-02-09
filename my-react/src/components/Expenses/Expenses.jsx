@@ -23,7 +23,7 @@ const Expenses = (props) => {
       />
       {
         props.expenses.map((expense) => {
-          return <Expenseitem key={expense.id} expensedata={expense}/> 
+          return <Expenseitem expensedata={expense} key={expense.id}/> 
         })
       } 
     </Card>
